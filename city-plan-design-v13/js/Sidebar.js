@@ -94,6 +94,7 @@ Sidebar.prototype.init = function()
 	
 	this.addUmlPalette(false);
 	this.addBpmnPalette(dir, false);
+	this.addParkPalette(dir, false);
 	
 	this.setCurrentSearchEntryLibrary('flowchart');
 	this.addStencilPalette('flowchart', 'Flowchart', dir + '/flowchart.xml',
@@ -2478,6 +2479,119 @@ Sidebar.prototype.addBpmnPalette = function(dir, expand)
 	this.addPaletteFunctions('bpmn', 'BPMN ' + mxResources.get('general'), false, fns);
 	this.setCurrentSearchEntryLibrary();
 };
+
+/**
+ * Adds the Park library to the sidebar.
+ */
+ Sidebar.prototype.addParkPalette = function(dir, expand)
+ {
+	 // Avoids having to bind all functions to "this"
+	 var sb = this;
+	 this.setCurrentSearchEntryLibrary('park');
+ 
+	 var fns =
+	 [
+		  
+		  this.addEntry(this.getTagsForStencil('mxgraph.park', 'дом').join(' '), function()
+		  {
+			//   var cell = new mxCell('User', new mxGeometry(0, 0, 120, 80), 'html=1;whiteSpace=wrap;rounded=1;dropTarget=0;');
+			//   cell.vertex = true;
+			  
+			  var cell1 = new mxCell('', new mxGeometry(0, 0, 67, 130), 'html=1;shape=mxgraph.park.дом;outlineConnect=0;');
+			  cell1.vertex = true;
+			  cell1.geometry.relative = true;
+			  cell1.geometry.offset = new mxPoint(67, 130);
+			//   cell.insert(cell1);
+			  
+			//   var cell2 = new mxCell('', new mxGeometry(0.5, 1, 14, 14), 'html=1;shape=plus;outlineConnect=0;');
+			//   cell2.vertex = true;
+			//   cell2.geometry.relative = true;
+			//   cell2.geometry.offset = new mxPoint(-7, -14);
+			//   cell.insert(cell2);
+			  
+			  return sb.createVertexTemplateFromCells([cell1], cell1.geometry.width, cell1.geometry.height, 'Дом');
+		  }),
+		  this.addEntry(this.getTagsForStencil('mxgraph.park', 'завод').join(' '), function()
+		  {
+			//   var cell = new mxCell('User', new mxGeometry(0, 0, 120, 80), 'html=1;whiteSpace=wrap;rounded=1;dropTarget=0;');
+			//   cell.vertex = true;
+			  
+			  var cell1 = new mxCell('', new mxGeometry(0, 0, 185, 163), 'html=1;shape=mxgraph.park.завод;outlineConnect=0;');
+			  cell1.vertex = true;
+			  cell1.geometry.relative = true;
+			  cell1.geometry.offset = new mxPoint(50, 50);
+			//   cell.insert(cell1);
+			  
+			//   var cell2 = new mxCell('', new mxGeometry(0.5, 1, 14, 14), 'html=1;shape=plus;outlineConnect=0;');
+			//   cell2.vertex = true;
+			//   cell2.geometry.relative = true;
+			//   cell2.geometry.offset = new mxPoint(-7, -14);
+			//   cell.insert(cell2);
+			  
+			  return sb.createVertexTemplateFromCells([cell1], cell1.geometry.width, cell1.geometry.height, 'Завод');
+		  }),
+		  this.addEntry(this.getTagsForStencil('mxgraph.park', 'лавочка').join(' '), function()
+		  {
+			//   var cell = new mxCell('User', new mxGeometry(0, 0, 120, 80), 'html=1;whiteSpace=wrap;rounded=1;dropTarget=0;');
+			//   cell.vertex = true;
+			  
+			  var cell1 = new mxCell('', new mxGeometry(0, 0, 150, 80), 'html=1;shape=mxgraph.park.лавочка;outlineConnect=0;');
+			  cell1.vertex = true;
+			  cell1.geometry.relative = true;
+			  cell1.geometry.offset = new mxPoint(50, 50);
+			//   cell.insert(cell1);
+			  
+			//   var cell2 = new mxCell('', new mxGeometry(0.5, 1, 14, 14), 'html=1;shape=plus;outlineConnect=0;');
+			//   cell2.vertex = true;
+			//   cell2.geometry.relative = true;
+			//   cell2.geometry.offset = new mxPoint(-7, -14);
+			//   cell.insert(cell2);
+			  
+			  return sb.createVertexTemplateFromCells([cell1], cell1.geometry.width, cell1.geometry.height, 'Лавочка');
+		  }),
+		  this.addEntry(this.getTagsForStencil('mxgraph.park', 'магазин').join(' '), function()
+		  {
+			//   var cell = new mxCell('User', new mxGeometry(0, 0, 120, 80), 'html=1;whiteSpace=wrap;rounded=1;dropTarget=0;');
+			//   cell.vertex = true;
+			  
+			  var cell1 = new mxCell('', new mxGeometry(0, 0, 130, 170), 'html=1;shape=mxgraph.park.магазин;outlineConnect=0;');
+			  cell1.vertex = true;
+			  cell1.geometry.relative = true;
+			//   cell1.geometry.offset = new mxPoint(50, 50);
+			//   cell.insert(cell1);
+			  
+			//   var cell2 = new mxCell('', new mxGeometry(0.5, 1, 14, 14), 'html=1;shape=plus;outlineConnect=0;');
+			//   cell2.vertex = true;
+			//   cell2.geometry.relative = true;
+			//   cell2.geometry.offset = new mxPoint(-7, -14);
+			//   cell.insert(cell2);
+			  
+			  return sb.createVertexTemplateFromCells([cell1], cell1.geometry.width, cell1.geometry.height, 'Магазин');
+		  }),
+		  this.addEntry(this.getTagsForStencil('mxgraph.park', 'фонарь').join(' '), function()
+		  {
+			//   var cell = new mxCell('User', new mxGeometry(0, 0, 120, 80), 'html=1;whiteSpace=wrap;rounded=1;dropTarget=0;');
+			//   cell.vertex = true;
+			  
+			  var cell1 = new mxCell('', new mxGeometry(0, 0, 100, 91), 'html=1;shape=mxgraph.park.фонарь;outlineConnect=0;');
+			  cell1.vertex = true;
+			  cell1.geometry.relative = true;
+			//   cell1.geometry.offset = new mxPoint(50, 50);
+			//   cell.insert(cell1);
+			  
+			//   var cell2 = new mxCell('', new mxGeometry(0.5, 1, 14, 14), 'html=1;shape=plus;outlineConnect=0;');
+			//   cell2.vertex = true;
+			//   cell2.geometry.relative = true;
+			//   cell2.geometry.offset = new mxPoint(-7, -14);
+			//   cell.insert(cell2);
+			  
+			  return sb.createVertexTemplateFromCells([cell1], cell1.geometry.width, cell1.geometry.height, 'Фонарь');
+		  }),
+	 ];
+	 
+	 this.addPaletteFunctions('park', 'CITY ' + mxResources.get('general'), false, fns);
+	 this.setCurrentSearchEntryLibrary();
+ };
 
 /**
  * Creates and returns the given title element.
