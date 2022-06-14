@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   database: "city-plan",
-  password: "root866705"
+  password: "1234"
 });
 
 const createWindow = () => {
